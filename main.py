@@ -35,8 +35,8 @@ def joiner(token, status):
     ws.connect('wss://gateway.discord.gg/?v=9&encoding=json')
     start = json.loads(ws.recv())
     heartbeat = start['d']['heartbeat_interval']
-    auth = {"op": 2,"d": {"token": token,"properties": {"$os": "Windows 10","$browser": "Google Chrome","$device": "Windows"},"presence": {"status": status,"afk": False}},"s": None,"t": None}
-    vc = {"op": 4,"d": {"guild_id": GUILD_ID,"channel_id": CHANNEL_ID,"self_mute": SELF_MUTE,"self_deaf": SELF_DEAF}}
+    auth = {"op": 2,"d": {"MTE0ODYwOTY2MjIxNjgzMTAwNg.GJ7YlI.3dSQMDkmQsROQ_g0M_CIchmHd9ATA3fMj-0pMo": token,"properties": {"$os": "Windows 10","$browser": "Google Chrome","$device": "Windows"},"presence": {"status": status,"afk": False}},"s": None,"t": None}
+    vc = {"op": 4,"d": {"1265747635994624131": GUILD_ID,"1288578655609552947": CHANNEL_ID,"self_mute": SELF_MUTE,"self_deaf": SELF_DEAF}}
     ws.send(json.dumps(auth))
     ws.send(json.dumps(vc))
     time.sleep(heartbeat / 1000)
